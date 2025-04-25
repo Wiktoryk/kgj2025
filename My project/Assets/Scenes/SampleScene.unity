@@ -844,6 +844,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713eedc835a2064fabaa9b5d9111cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPositions:
+  - {x: 1, y: 1, z: 0}
+  - {x: -1, y: -1, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: -2, y: -2, z: 0}
+  - {x: 3, y: 3, z: 0}
   buttonPreFab: {fileID: 241654566}
 --- !u!4 &1592143216
 Transform:
