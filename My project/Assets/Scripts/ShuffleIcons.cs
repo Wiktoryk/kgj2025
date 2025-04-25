@@ -18,12 +18,12 @@ public class ShuffleIcons : MonoBehaviour
         for (int i = 0; i < size; i++)
         {
             icons.Add(i);
-            generatedIcons.Add(new IconData(i));
         }
         while( icons.Count > 0) 
         {
             int i = Random.Range( 0, icons.Count );
             GameObject go = new GameObject("IconID:"+ icons[i]);
+            generatedIcons.Add(new IconData(i));
             go.transform.parent = display.transform;
             go.AddComponent<Image>();
             Debug.Log(icons[i]);

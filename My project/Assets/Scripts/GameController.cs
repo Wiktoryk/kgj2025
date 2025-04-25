@@ -80,8 +80,6 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < icons.Count; i++)
         {
 
-            Debug.Log(chosenItems.GetComponent<InteractionManager>().chosenIcons[i] + "==" + icons[i].icon);
-
             if (chosenItems.GetComponent<InteractionManager>().chosenIcons[i] != icons[i].icon)
             {
 
