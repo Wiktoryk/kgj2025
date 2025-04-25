@@ -8,15 +8,15 @@ public class InteractionManager : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").transform;
-        buttons = new List<Transform>();
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Button"))
-        {
-            buttons.Add(go.transform);
-        }
+
     }
 
     void Update()
     {
+        if (buttons == null)
+        {
+            ButtonTest();
+        }
         Transform button = isOverButton(player);
         if (Input.GetButtonDown("Fire1") && button != null) {
             button.GetComponent<ButtonController>().Interaction();
@@ -33,5 +33,15 @@ public class InteractionManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    void ButtonTest()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().generateButtons();
+        buttons = new List<Transform>();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Button"))
+        {
+            buttons.Add(go.transform);
+        }
     }
 }

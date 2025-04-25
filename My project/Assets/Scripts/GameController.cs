@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 public struct IconData
@@ -14,10 +15,11 @@ public struct IconData
 public class GameController : MonoBehaviour
 {
     public List<IconData> icons;
+    public List<Vector3> buttonPositions;
     public GameObject buttonPreFab;
     void Start()
     {
-        generateButtons();
+
     }
 
     void Update()
@@ -25,13 +27,18 @@ public class GameController : MonoBehaviour
         
     }
 
-    void generateButtons()
+    public void generateButtons()
     {
         icons = GetComponent<ShuffleIcons>().generatedIcons;
+        if (buttonPositions.Count!=icons.Count)
+        {
+            throw new Exception("Nie podano wystarczaj¹co pozycji przycisków");
+        }
+        int counter = 0;
         foreach (IconData iconData in icons)
         {
             int icon = iconData.icon;
-            GameObject button = Instantiate(buttonPreFab, new Vector3(icon, icon, 0), Quaternion.identity);
+            GameObject button = Instantiate(buttonPreFab, buttonPositions[counter++], Quaternion.identity);
             button.SetActive(true);
             button.AddComponent<ButtonController>();
             button.GetComponent<ButtonController>().icon = icon;
