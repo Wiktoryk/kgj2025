@@ -78,3 +78,5 @@ crashlytics-build.properties
 /My project/Temp
 /My project/obj
 /My project/Logs
+/My project/Logs
+*.log
