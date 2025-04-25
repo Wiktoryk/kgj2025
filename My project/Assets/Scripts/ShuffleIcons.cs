@@ -29,7 +29,18 @@ public class ShuffleIcons : MonoBehaviour
             Debug.Log(icons[i]);
             //Sprite sprite = Resources.Load<Sprite>("Assets/Sprites/"+ icons[i] + ".png");
             //Sprite sprite = Resources.Load<Sprite>("Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png"); 
-            go.GetComponent<Image>().color =new  Color(1,0,1);
+            if (icons[i] % 3 == 0)
+            {
+                go.GetComponent<Image>().color = new Color((float)icons[i] / 10, 0, 0);
+            }
+            else if (icons[i] % 3 == 1)
+            {
+                go.GetComponent<Image>().color = new Color(0, (float)icons[i] / 10, 0);
+            }
+            else if (icons[i] % 3 == 2)
+            {
+                go.GetComponent<Image>().color = new Color(0, 0, (float)icons[i] / 10);
+            }
             icons.RemoveAt( i );
         }
     }

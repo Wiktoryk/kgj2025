@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public List<IconData> icons;
     public List<Vector3> buttonPositions;
     public GameObject buttonPreFab;
+    public GameObject chossedItems;
+    public bool isWin;
     void Start()
     {
 
@@ -24,13 +26,17 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        
+        if (chossedItems.GetComponent<InteractionManager>().chossedIcons.Count == icons.Count)
+        {
+            checkIcons();
+            Debug.Log(isWin);
+        }
     }
 
     public void generateButtons()
     {
         icons = GetComponent<ShuffleIcons>().generatedIcons;
-        if (buttonPositions.Count!=icons.Count)
+        if (buttonPositions.Count != icons.Count)
         {
             throw new Exception("Nie podano wystarczaj¹co pozycji przycisków");
         }
@@ -56,4 +62,20 @@ public class GameController : MonoBehaviour
             button.GetComponent<ButtonController>().icon = icon;
         }
     }
+
+    public void checkIcons()
+    {
+        for (int i = 0; i < icons.Count; i++)
+        {
+            if (chossedItems.GetComponent<InteractionManager>().chossedIcons[i] != icons[i].icon)
+            {
+                isWin = false;
+                return;
+            }
+        }
+        isWin = true;
+        return;
+    }
+
 }
+
