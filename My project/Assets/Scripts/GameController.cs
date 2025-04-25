@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public GameObject buttonPreFab;
     void Start()
     {
-        generateButtons();
+
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
         
     }
 
-    void generateButtons()
+    public void generateButtons()
     {
         icons = GetComponent<ShuffleIcons>().generatedIcons;
         foreach (IconData iconData in icons)
