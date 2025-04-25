@@ -1,5 +1,4 @@
 using UnityEngine;
-using Unity.Core;
 using System.Collections.Generic;
 
 public class InteractionManager : MonoBehaviour
@@ -18,17 +17,17 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
-        Transform button = isOverButton(player).Value;
+        Transform button = isOverButton(player);
         if (Input.GetButtonDown("Fire1") && button != null) {
             button.GetComponent<ButtonController>().Interaction();
         }
     }
-
-    Optional<Transform> isOverButton(Transform transform)
+    
+    Transform? isOverButton(Transform transform)
     {
         foreach (Transform button in buttons)
         {
-            if (Physics.OverlapSphere(transform, button))
+            if (Vector3.Distance(button.position, transform.position) < 1.0f)
             {
                 return button;
             }
