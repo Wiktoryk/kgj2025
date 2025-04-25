@@ -6,7 +6,7 @@ public class InteractionManager : MonoBehaviour
     private Transform player;
     private List<Transform> buttons;
 
-    public List<int> chossedIcons;
+    public List<int> chosenIcons;
     void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -22,9 +22,9 @@ public class InteractionManager : MonoBehaviour
         Transform button = isOverButton(player);
         if (Input.GetButtonDown("Fire1") && button != null) {
             button.GetComponent<ButtonController>().Interaction();
-            if (!chossedIcons.Contains(button.GetComponent<ButtonController>().icon))
+            if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
             {
-                chossedIcons.Add(button.GetComponent<ButtonController>().icon);
+                chosenIcons.Add(button.GetComponent<ButtonController>().icon);
             }
         }
     }

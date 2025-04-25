@@ -11,6 +11,7 @@ public class AddEnemy : MonoBehaviour
         enemyObject = new GameObject("Enemy");
         enemyObject.AddComponent<SpriteRenderer>();
         //enemyObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Assets/Sprites/enemy.png");
+        enemyObject.GetComponent<SpriteRenderer>().color = Color.gray;
         enemyObject.transform.position = Vector2.zero;
         enemyObject.AddComponent<EnemyMovement>();
         enemyObject.GetComponent<EnemyMovement>().playerPositon = GameObject.Find("Player").transform;
@@ -25,9 +26,6 @@ public class AddEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
-        {
-            enemyObject.SetActive(true);
-        }
+        
     }
 }

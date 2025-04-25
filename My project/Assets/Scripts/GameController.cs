@@ -17,8 +17,10 @@ public class GameController : MonoBehaviour
     public List<IconData> icons;
     public List<Vector3> buttonPositions;
     public GameObject buttonPreFab;
-    public GameObject chossedItems;
+    public GameObject chosenItems;
+    public GameObject EndText;
     public bool isWin;
+    public bool isEnded;
     void Start()
     {
 
@@ -26,7 +28,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (chossedItems.GetComponent<InteractionManager>().chossedIcons.Count == icons.Count)
+        if (chosenItems.GetComponent<InteractionManager>().chosenIcons.Count == icons.Count)
         {
             checkIcons();
             Debug.Log(isWin);
@@ -67,7 +69,7 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < icons.Count; i++)
         {
-            if (chossedItems.GetComponent<InteractionManager>().chossedIcons[i] != icons[i].icon)
+            if (chosenItems.GetComponent<InteractionManager>().chosenIcons[i] != icons[i].icon)
             {
                 isWin = false;
                 return;
