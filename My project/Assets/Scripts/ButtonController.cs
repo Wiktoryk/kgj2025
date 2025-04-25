@@ -24,7 +24,7 @@ public class ButtonController : MonoBehaviour
                     Debug.Log("1");
                     break;
                 case 2:
-                    Debug.Log("2");
+                    GameObject.Find("GameController").AddComponent<AddEnemy>();
                     break;
                 default:
                     break;

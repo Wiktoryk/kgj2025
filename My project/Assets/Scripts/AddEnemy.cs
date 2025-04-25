@@ -18,7 +18,7 @@ public class AddEnemy : MonoBehaviour
         enemyObject.AddComponent<Rigidbody2D>();
         
 
-        enemyObject.SetActive(false);
+        //enemyObject.SetActive(false);
 
     }
 
