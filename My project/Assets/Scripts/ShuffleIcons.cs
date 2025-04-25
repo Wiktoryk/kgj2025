@@ -23,7 +23,7 @@ public class ShuffleIcons : MonoBehaviour
         {
             int i = Random.Range( 0, icons.Count );
             GameObject go = new GameObject("IconID:"+ icons[i]);
-            generatedIcons.Add(new IconData(i));
+            generatedIcons.Add(new IconData(icons[i]));
             go.transform.parent = display.transform;
             go.AddComponent<Image>();
             Debug.Log(icons[i]);
