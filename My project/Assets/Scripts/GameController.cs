@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public struct IconData
 {
@@ -32,6 +33,15 @@ public class GameController : MonoBehaviour
         {
             checkIcons();
             Debug.Log(isWin);
+            if (isWin) 
+            {
+                EndText.SetActive(true); 
+            }
+            else
+            {
+                EndText.transform.GetChild(0).GetComponent<Text>().text = "Przegra³eœ";
+                EndText.SetActive(true);
+            }
         }
     }
 
@@ -69,8 +79,13 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < icons.Count; i++)
         {
+
+            Debug.Log(chosenItems.GetComponent<InteractionManager>().chosenIcons[i] + "==" + icons[i].icon);
+
             if (chosenItems.GetComponent<InteractionManager>().chosenIcons[i] != icons[i].icon)
             {
+
+                Debug.Log(chosenItems.GetComponent<InteractionManager>().chosenIcons[i] + "==" + icons[i].icon);
                 isWin = false;
                 return;
             }
