@@ -3,6 +3,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public bool hasInteracted = false;
+    public int icon;
     void Start()
     {
         
@@ -17,7 +18,17 @@ public class ButtonController : MonoBehaviour
     {
         if(!hasInteracted)
         {
-            Debug.Log("Pressed");
+            switch (icon)
+            {
+                case 1:
+                    Debug.Log("1");
+                    break;
+                case 2:
+                    Debug.Log("2");
+                    break;
+                default:
+                    break;
+            }
             hasInteracted = true;
         }
     }
