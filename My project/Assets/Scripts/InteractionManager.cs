@@ -22,7 +22,7 @@ public class InteractionManager : MonoBehaviour
         Transform button = isOverButton(player);
         if (Input.GetButtonDown("Fire1") && button != null) {
             button.GetComponent<ButtonController>().Interaction();
-            if (!button.GetComponent<ButtonController>().hasInteracted)
+            if (!chossedIcons.Contains(button.GetComponent<ButtonController>().icon))
             {
                 chossedIcons.Add(button.GetComponent<ButtonController>().icon);
             }

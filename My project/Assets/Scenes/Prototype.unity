@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ecc018d3871604eb4ce063579b318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chossedIcons: 
 --- !u!4 &772988609
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,6 +1242,8 @@ MonoBehaviour:
   - {x: -2, y: -2, z: 0}
   - {x: 3, y: 3, z: 0}
   buttonPreFab: {fileID: 2132938543}
+  chossedItems: {fileID: 772988607}
+  isWin: 0
 --- !u!4 &2057751076
 Transform:
   m_ObjectHideFlags: 0
