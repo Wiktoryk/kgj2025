@@ -10,7 +10,7 @@ public class ShuffleIcons : MonoBehaviour
 {
 
     public List<int> icons;
-    public List<IconData> generatedIcons = new List<IconData>();
+    public List<int> generatedIcons = new List<int>();
     public int size;
     public GameObject display;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,7 +24,7 @@ public class ShuffleIcons : MonoBehaviour
         {
             int i = Random.Range( 0, icons.Count );
             GameObject go = new GameObject("IconID:"+ icons[i]);
-            generatedIcons.Add(new IconData(icons[i]));
+            generatedIcons.Add(icons[i]);
             go.transform.parent = display.transform;
             go.AddComponent<Image>();
             Debug.Log(icons[i]);

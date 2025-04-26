@@ -23,10 +23,4 @@ public class AddEnemy : MonoBehaviour
         //enemyObject.SetActive(false);
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

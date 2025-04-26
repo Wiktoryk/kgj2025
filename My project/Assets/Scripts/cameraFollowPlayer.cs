@@ -3,10 +3,6 @@ using UnityEngine;
 public class cameraFollowPlayer : MonoBehaviour
 {
     public Transform player;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
