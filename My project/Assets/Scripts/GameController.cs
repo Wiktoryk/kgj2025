@@ -15,7 +15,7 @@ public struct IconData
 
 public class GameController : MonoBehaviour
 {
-    public List<IconData> icons;
+    public List<IconData> icons = new List<IconData>();
     public List<Vector3> buttonPositions;
     public GameObject buttonPreFab;
     public GameObject chosenItems;
@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (chosenItems.GetComponent<InteractionManager>().chosenIcons.Count == icons.Count)
+        if (chosenItems.GetComponent<InteractionManager>().chosenIcons.Count == icons.Count && icons.Count > 0)
         {
             checkIcons();
             Debug.Log(isWin);

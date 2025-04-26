@@ -4,9 +4,9 @@ using System.Collections.Generic;
 public class InteractionManager : MonoBehaviour
 {
     private Transform player;
-    private List<Transform> buttons;
+    private List<Transform> buttons = new List<Transform>();
 
-    public List<int> chosenIcons;
+    public List<int> chosenIcons = new List<int>();
     void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -15,16 +15,16 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
-        if (buttons == null)
+        if (buttons.Count <= 0)
         {
-            ButtonTest();
-        }
-        Transform button = isOverButton(player);
-        if (Input.GetButtonDown("Fire1") && button != null) {
-            button.GetComponent<ButtonController>().Interaction();
-            if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
+            Transform button = isOverButton(player);
+            if (Input.GetButtonDown("Fire1") && button != null)
             {
-                chosenIcons.Add(button.GetComponent<ButtonController>().icon);
+                button.GetComponent<ButtonController>().Interaction();
+                if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
+                {
+                    chosenIcons.Add(button.GetComponent<ButtonController>().icon);
+                }
             }
         }
     }
@@ -41,10 +41,9 @@ public class InteractionManager : MonoBehaviour
         return null;
     }
 
-    void ButtonTest()
+    public void ButtonTest()
     {
         GameObject.Find("GameController").GetComponent<GameController>().generateButtons();
-        buttons = new List<Transform>();
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Button"))
         {
             buttons.Add(go.transform);

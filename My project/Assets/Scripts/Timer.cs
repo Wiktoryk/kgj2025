@@ -16,6 +16,8 @@ public class Timer : MonoBehaviour
     {
         if (hintTime > 0)
         {
+            GameObject player = GameObject.Find("Player");
+            player.transform.position = new Vector3(100, 100, 0);
             hintTime -= Time.deltaTime;
             if (hintTime <= 0)
             {
@@ -27,6 +29,8 @@ public class Timer : MonoBehaviour
                     currentCount--;
                 }
                 DestroyList();
+                player.transform.position = new Vector3(0, 0, 0);
+                GameObject.Find("InteractionManager").GetComponent<InteractionManager>().ButtonTest();
             }
         }
         else
