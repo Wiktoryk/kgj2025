@@ -17,6 +17,7 @@ public class AddEnemy : MonoBehaviour
         enemyObject.GetComponent<EnemyMovement>().playerPositon = GameObject.Find("Player").transform;
         enemyObject.GetComponent<EnemyMovement>().speed = 1;
         enemyObject.AddComponent<Rigidbody2D>();
+        enemyObject.AddComponent<Collider2D>();
         
 
         //enemyObject.SetActive(false);

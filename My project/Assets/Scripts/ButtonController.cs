@@ -34,6 +34,10 @@ public class ButtonController : MonoBehaviour
                 case 3:
                     GameObject.Find("GameController").AddComponent<AddEnemy>();
                     break;
+                case 4:
+                    GameObject.Find("MovingWalls").SetActive(true);
+                    break;
+
                 default:
                     break;
             }

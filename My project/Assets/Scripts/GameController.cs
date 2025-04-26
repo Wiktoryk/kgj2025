@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public struct IconData
 {
@@ -24,7 +25,7 @@ public class GameController : MonoBehaviour
     public bool isEnded;
     void Start()
     {
-
+        isWin = false; isEnded = false;
     }
 
     void Update()
@@ -32,16 +33,37 @@ public class GameController : MonoBehaviour
         if (chosenItems.GetComponent<InteractionManager>().chosenIcons.Count == icons.Count && icons.Count > 0)
         {
             checkIcons();
-            Debug.Log(isWin);
-            if (isWin) 
+            isEnded = true;
+            
+        }
+        if (isEnded)
+        {
+            if (isWin)
             {
-                EndText.SetActive(true); 
+                EndText.SetActive(true);
+                if (Input.anyKeyDown)
+                {
+                    if (SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).IsValid())
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("Start");
+                    }
+                }
+
             }
             else
             {
                 EndText.transform.GetChild(0).GetComponent<Text>().text = "Przegra³eœ";
                 EndText.SetActive(true);
+                if (Input.anyKeyDown)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
+            
         }
     }
 

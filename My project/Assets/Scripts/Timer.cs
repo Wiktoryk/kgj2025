@@ -46,6 +46,7 @@ public class Timer : MonoBehaviour
             else
             {
                 timeLeft = 0;
+                GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
             }
         }
         czas.GetComponent<Text>().text = ((int)timeLeft).ToString() + "sekund";

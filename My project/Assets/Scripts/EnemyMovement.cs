@@ -15,4 +15,12 @@ public class EnemyMovement : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize( playerPositon.position - this.transform.position);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
+        }
+    }
 }
