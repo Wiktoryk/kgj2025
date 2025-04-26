@@ -1,0 +1,39 @@
+using NUnit.Framework;
+using System.Runtime.CompilerServices;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MenuHover : MonoBehaviour
+{
+    public GameObject player;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        transform.GetChild(1).gameObject.SetActive(false);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("Level1");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        transform.GetChild(1).gameObject.SetActive(true);
+    }
+}

@@ -27,7 +27,7 @@ public class ShuffleIcons : MonoBehaviour
             go.transform.parent = display.transform;
             go.AddComponent<Image>();
             Debug.Log(icons[i]);
-            Sprite sprite = Resources.Load<Sprite>("tree runes/"+ (icons[i]+1));
+            Sprite sprite = Resources.Load<Sprite>("runestones/"+ (icons[i])+"/" + (icons[i]) +"-ready");
             go.GetComponent<Image>().sprite = sprite;
             icons.RemoveAt( i );
         }

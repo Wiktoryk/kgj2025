@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
         {
             int icon = iconData.icon;
             GameObject button = Instantiate(buttonPreFab, buttonPositions[counter++], Quaternion.identity);
-            Sprite sprite = Resources.Load<Sprite>("tree runes/" + (icon + 1));
+            Sprite sprite = Resources.Load<Sprite>("runestones/" + (icon) + "/" + (icon) + "-ready");
             button.GetComponent<SpriteRenderer>().sprite = sprite;
             button.SetActive(true);
             button.GetComponent<ButtonController>().icon = icon;

@@ -31,7 +31,7 @@ public class InteractionManager : MonoBehaviour
                     GameObject go = new GameObject("IconID:" + chosenIcons.Last());
                     go.transform.parent = display.transform;
                     go.AddComponent<Image>();
-                    Sprite sprite = Resources.Load<Sprite>("tree runes/" + (chosenIcons.Last() + 1));
+                    Sprite sprite = Resources.Load<Sprite>("runestones/"+(chosenIcons.Last()) + "/" + (chosenIcons.Last()) + "-ready"); 
                     go.GetComponent<Image>().sprite = sprite;
                 }
             }
@@ -44,6 +44,7 @@ public class InteractionManager : MonoBehaviour
         {
             if (Vector3.Distance(button.position, transform.position) < 1.0f)
             {
+               
                 return button;
             }
         }
