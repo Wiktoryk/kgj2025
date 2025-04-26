@@ -4,9 +4,6 @@ public class ButtonController : MonoBehaviour
 {
     public bool hasInteracted = false;
     public int icon;
-    void Start()
-    {
-    }
 
     public void Interaction()
     {
@@ -26,7 +23,7 @@ public class ButtonController : MonoBehaviour
                     staticEnemy.transform.position = new Vector3(0, 0, 0);
                     break;
                 case 3:
-                    GameObject.Find("GameController").AddComponent<AddEnemy>();
+                    GameObject.Find("GameController").GetComponent<AddEnemy>().Spawn();
                     break;
                 case 4:
                     for (int i = 0;i< GameObject.Find("MovingWalls").transform.childCount; i++)

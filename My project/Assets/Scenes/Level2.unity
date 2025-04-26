@@ -1251,7 +1251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb270e97d1eaa7a478c31f0a846771c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingWalls: {fileID: 0}
   hasInteracted: 0
   icon: 0
 --- !u!212 &824449643
@@ -1337,6 +1336,7 @@ GameObject:
   - component: {fileID: 877481839}
   - component: {fileID: 877481838}
   - component: {fileID: 877481837}
+  - component: {fileID: 877481841}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1490,6 +1490,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &877481841
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877481835}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e3406127e1915f4e986576fbd5fdce5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &881550735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,9 +2053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f0649164f989e4c8577743843c18fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  czas: {fileID: 454180474}
   timeLeft: 0
   timeMax: 10
-  czas: {fileID: 454180474}
 --- !u!114 &1210305657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2061,8 +2083,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: 
-  size: 3
+  generatedIcons: 
   display: {fileID: 110680555}
+  size: 3
 --- !u!114 &1210305659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,6 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713eedc835a2064fabaa9b5d9111cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icons: 
   buttonPositions:
   - {x: 7, y: 3.5, z: 0}
   - {x: 3, y: 3.5, z: 0}
@@ -2700,8 +2724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ecc018d3871604eb4ce063579b318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenIcons: 
   display: {fileID: 1282339286}
+  chosenIcons: 
 --- !u!4 &1643805568
 Transform:
   m_ObjectHideFlags: 0
@@ -3407,7 +3431,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -6659447077290792336, guid: b443b81d8276178429ef6e7276e9b79e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3428,7 +3452,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.37, y: -1, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

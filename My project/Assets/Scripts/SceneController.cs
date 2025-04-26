@@ -7,4 +7,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
 }
