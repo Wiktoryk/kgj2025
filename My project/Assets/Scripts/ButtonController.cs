@@ -13,11 +13,6 @@ public class ButtonController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     public void Interaction()
     {
         if(!hasInteracted)
@@ -39,7 +34,10 @@ public class ButtonController : MonoBehaviour
                     GameObject.Find("GameController").AddComponent<AddEnemy>();
                     break;
                 case 4:
-                    movingWalls.SetActive(true);
+                    if (movingWalls)
+                    {
+                        movingWalls.SetActive(true);
+                    }
                     break;
 
                 case 5:
