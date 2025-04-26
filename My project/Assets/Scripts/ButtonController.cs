@@ -36,6 +36,9 @@ public class ButtonController : MonoBehaviour
                 case 5:
                     GameObject.Find("GameController").GetComponent<ChangeIconsLocation>().ChangeLocation();
                     break;
+                case 6:
+                    GameObject.Find("Player").GetComponent<PlayerController>().inverted = true;
+                    break;
                 default:
                     break;
             }

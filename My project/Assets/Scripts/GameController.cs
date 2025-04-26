@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class GameController : MonoBehaviour
@@ -48,7 +49,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                EndText.transform.GetChild(0).GetComponent<Text>().text = "Przegra³eœ";
+                EndText.transform.GetChild(0).GetComponent<Text>().text = "You have lost";
                 EndText.SetActive(true);
                 if (Input.anyKeyDown)
                 {
