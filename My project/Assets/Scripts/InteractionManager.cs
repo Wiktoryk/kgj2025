@@ -45,7 +45,22 @@ public class InteractionManager : MonoBehaviour
             if (Vector3.Distance(button.position, transform.position) < 1.0f)
             {
                
+                
+                if (!button.GetComponent<ButtonController>().hasInteracted)
+                {
+                    button.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("runestones/" + (button.GetComponent<ButtonController>().icon) + "/" + (button.GetComponent<ButtonController>().icon) + "-prox");
+                }
                 return button;
+            }
+            if (!button.GetComponent<ButtonController>().hasInteracted)
+            {
+
+                button.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("runestones/" + (button.GetComponent<ButtonController>().icon) + "/" + (button.GetComponent<ButtonController>().icon) + "-ready");
+            }
+            else
+            {
+
+                button.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("runestones/" + (button.GetComponent<ButtonController>().icon) + "/" + (button.GetComponent<ButtonController>().icon) + "-used");
             }
         }
         return null;
