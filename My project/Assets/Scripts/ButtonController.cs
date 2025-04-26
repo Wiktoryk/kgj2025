@@ -21,7 +21,7 @@ public class ButtonController : MonoBehaviour
             switch (icon)
             {   
                 case 0:
-                    GameObject.Find("GameController").GetComponent<ChangeIconsLocation>().ChangeLocation();
+                    GameObject.Find("Player").GetComponent<PlayerController>().speed = 1000;
                     break;
                 case 1:
                     GameObject.Find("GameController").GetComponent<WallControl>().isActive = true;
@@ -38,6 +38,9 @@ public class ButtonController : MonoBehaviour
                     GameObject.Find("MovingWalls").SetActive(true);
                     break;
 
+                case 5:
+                    GameObject.Find("GameController").GetComponent<ChangeIconsLocation>().ChangeLocation();
+                    break;
                 default:
                     break;
             }
