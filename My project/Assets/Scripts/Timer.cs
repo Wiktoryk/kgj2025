@@ -38,14 +38,17 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            if (timeLeft > 0)
+            if (timeLeft > 0 && !GameObject.Find("GameController").GetComponent<GameController>().isEnded)
             {
                 timeLeft -= Time.deltaTime;
                 //Debug.Log(timeLeft);
             }
             else
             {
-                timeLeft = 0;
+                if (timeLeft < 0)
+                {
+                    timeLeft = 0;
+                }
                 GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
             }
         }

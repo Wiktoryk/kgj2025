@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
                 EndText.SetActive(true);
                 if (Input.anyKeyDown)
                 {
-                    if (SceneManager.GetActiveScene().buildIndex + 1< SceneManager.sceneCount)
+                    if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
                     {
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                     }
@@ -76,6 +76,16 @@ public class GameController : MonoBehaviour
         {
             throw new Exception("Nie podano wystarczaj¹co pozycji przycisków");
         }
+        int count = buttonPositions.Count;
+        int last = count - 1;
+        for (var i =0; i<last; ++i)
+        {
+            var r = UnityEngine.Random.Range(i, count);
+            var tmp = buttonPositions[i];
+            buttonPositions[i] = buttonPositions[r];
+            buttonPositions[r] = tmp;
+        }
+
         int counter = 0;
         foreach (IconData iconData in icons)
         {
