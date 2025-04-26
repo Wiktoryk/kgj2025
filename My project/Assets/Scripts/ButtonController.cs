@@ -27,6 +27,11 @@ public class ButtonController : MonoBehaviour
                     GameObject.Find("GameController").GetComponent<WallControl>().isActive = true;
                     break;
                 case 2:
+                    GameObject staticEnemy = GameObject.Find("StaticEnemy");
+                    staticEnemy.GetComponent<StaticEnemy>().isActive = true;
+                    staticEnemy.transform.position = new Vector3(0, 0, 0);
+                    break;
+                case 3:
                     GameObject.Find("GameController").AddComponent<AddEnemy>();
                     break;
                 default:
