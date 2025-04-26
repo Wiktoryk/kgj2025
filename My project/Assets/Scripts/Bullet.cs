@@ -8,5 +8,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
+        }
     }
+
 }

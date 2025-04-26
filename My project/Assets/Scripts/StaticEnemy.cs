@@ -23,7 +23,7 @@ public class StaticEnemy : MonoBehaviour
             }
             else
             {
-                bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(Math.Sign(direction.x), Math.Sign(direction.y), Math.Sign(direction.z)) * 50 * Time.deltaTime;
+                bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(Math.Sign(direction.x), Math.Sign(direction.y), Math.Sign(direction.z)) * 100 * Time.deltaTime;
             }
         }
     }
