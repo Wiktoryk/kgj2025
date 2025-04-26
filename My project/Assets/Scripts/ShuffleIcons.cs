@@ -27,9 +27,10 @@ public class ShuffleIcons : MonoBehaviour
             go.transform.parent = display.transform;
             go.AddComponent<Image>();
             Debug.Log(icons[i]);
-            //Sprite sprite = Resources.Load<Sprite>("Assets/Sprites/"+ icons[i] + ".png");
+            Sprite sprite = Resources.Load<Sprite>("tree runes/"+ (icons[i]+1));
+            go.GetComponent<Image>().sprite = sprite;
             //Sprite sprite = Resources.Load<Sprite>("Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png"); 
-            if (icons[i] % 3 == 0)
+            /*if (icons[i] % 3 == 0)
             {
                 go.GetComponent<Image>().color = new Color((float)icons[i] / 10, 0, 0);
             }
@@ -40,7 +41,7 @@ public class ShuffleIcons : MonoBehaviour
             else if (icons[i] % 3 == 2)
             {
                 go.GetComponent<Image>().color = new Color(0, 0, (float)icons[i] / 10);
-            }
+            }*/
             icons.RemoveAt( i );
         }
     }
