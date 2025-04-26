@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject movingWalls;
     public bool hasInteracted = false;
     public int icon;
     void Start()
     {
-        if (movingWalls)
-        {
-            movingWalls.SetActive(false);
-        }
     }
 
     public void Interaction()
@@ -34,10 +29,11 @@ public class ButtonController : MonoBehaviour
                     GameObject.Find("GameController").AddComponent<AddEnemy>();
                     break;
                 case 4:
-                    if (movingWalls)
+                    for (int i = 0;i< GameObject.Find("MovingWalls").transform.childCount; i++)
                     {
-                        movingWalls.SetActive(true);
+                        GameObject.Find("MovingWalls").transform.GetChild(i).GetComponent<WallMovement>().speed = 1;
                     }
+                    
                     break;
 
                 case 5:

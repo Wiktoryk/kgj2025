@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kaltka0002_0: 8650555896105212246
+      kaltka0002_1: -4074477220709356950
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
