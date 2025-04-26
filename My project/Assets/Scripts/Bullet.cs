@@ -4,10 +4,8 @@ public class Bullet : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("wall"))
-        {
             Destroy(gameObject);
-        }
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;

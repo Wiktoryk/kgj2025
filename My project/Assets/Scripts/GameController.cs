@@ -60,7 +60,8 @@ public class GameController : MonoBehaviour
                 EndText.SetActive(true);
                 if (Input.anyKeyDown)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    new WaitForSecondsRealtime(5);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name) ;
                 }
             }
             
