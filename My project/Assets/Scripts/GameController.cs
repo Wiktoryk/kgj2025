@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
                 EndText.SetActive(true);
                 if (Input.anyKeyDown)
                 {
-                    if (SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).IsValid())
+                    if (SceneManager.GetActiveScene().buildIndex + 1< SceneManager.sceneCount)
                     {
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                     }
