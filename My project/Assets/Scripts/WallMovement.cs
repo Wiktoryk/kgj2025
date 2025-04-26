@@ -1,8 +1,9 @@
+using UnityEditor;
 using UnityEngine;
 
 public class WallMovement : MonoBehaviour
 {
-
+    public float speed;
     public Vector3 targetPosition;
     private Vector3 startPosition;
     private Vector3 tmp;
@@ -10,7 +11,7 @@ public class WallMovement : MonoBehaviour
     void Start()
     {
         startPosition = transform.localPosition;
-        Debug.Log(startPosition);
+        speed = 0.0f;
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class WallMovement : MonoBehaviour
         else 
         {
 
-            this.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(targetPosition - this.transform.localPosition);
+            this.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(targetPosition - this.transform.localPosition)*speed;
         }
 
     }
