@@ -17,6 +17,7 @@ public class ResourceManager : MonoBehaviour
             used.Add(Resources.Load<Sprite>("runestones/" + i + "/" + i + "-used"));
             prox.Add(Resources.Load<Sprite>("runestones/" + i + "/" + i + "-prox"));
         }
+        Debug.Log(ready.Count);
     }
 
     // Update is called once per frame

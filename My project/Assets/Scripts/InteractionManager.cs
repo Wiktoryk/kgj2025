@@ -31,8 +31,7 @@ public class InteractionManager : MonoBehaviour
                     GameObject go = new GameObject("IconID:" + chosenIcons.Last());
                     go.transform.parent = display.transform;
                     go.AddComponent<Image>();
-                    Sprite sprite = Resources.Load<Sprite>("runestones/"+(chosenIcons.Last()) + "/" + (chosenIcons.Last()) + "-ready"); 
-                    go.GetComponent<Image>().sprite = sprite;
+                    go.GetComponent<Image>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[chosenIcons.Last()];
                 }
             }
         }
@@ -48,19 +47,19 @@ public class InteractionManager : MonoBehaviour
                 
                 if (!button.GetComponent<ButtonController>().hasInteracted)
                 {
-                    button.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("runestones/" + (button.GetComponent<ButtonController>().icon) + "/" + (button.GetComponent<ButtonController>().icon) + "-prox");
+                    button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().prox[button.GetComponent<ButtonController>().icon];
                 }
                 return button;
             }
             if (!button.GetComponent<ButtonController>().hasInteracted)
             {
 
-                button.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("runestones/" + (button.GetComponent<ButtonController>().icon) + "/" + (button.GetComponent<ButtonController>().icon) + "-ready");
+                button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[button.GetComponent<ButtonController>().icon];
             }
             else
             {
 
-                button.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("runestones/" + (button.GetComponent<ButtonController>().icon) + "/" + (button.GetComponent<ButtonController>().icon) + "-used");
+                button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().used[button.GetComponent<ButtonController>().icon];
             }
         }
         return null;

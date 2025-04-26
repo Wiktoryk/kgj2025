@@ -1,6 +1,7 @@
 using Mono.Cecil;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -27,8 +28,15 @@ public class ShuffleIcons : MonoBehaviour
             go.transform.parent = display.transform;
             go.AddComponent<Image>();
             Debug.Log(icons[i]);
-            Sprite sprite = Resources.Load<Sprite>("runestones/"+ (icons[i])+"/" + (icons[i]) +"-ready");
-            go.GetComponent<Image>().sprite = sprite;
+            if (GameObject.Find("GameController").GetComponent<ResourceManager>().ready.Count > 0)
+            {
+                go.GetComponent<Image>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[icons[i]];
+            }
+            else
+            {
+                Sprite sprite = Resources.Load<Sprite>("runestones/" + (icons[i]) + "/" + (icons[i]) + "-ready");
+                go.GetComponent<Image>().sprite = sprite;
+            }
             icons.RemoveAt( i );
         }
     }
