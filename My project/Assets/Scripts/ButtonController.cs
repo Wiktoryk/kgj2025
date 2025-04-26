@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public GameObject movingWalls;
     public bool hasInteracted = false;
     public int icon;
     void Start()
     {
-        
+        movingWalls.SetActive(false);
     }
 
     void Update()
@@ -35,7 +36,7 @@ public class ButtonController : MonoBehaviour
                     GameObject.Find("GameController").AddComponent<AddEnemy>();
                     break;
                 case 4:
-                    GameObject.Find("MovingWalls").SetActive(true);
+                    movingWalls.SetActive(true);
                     break;
 
                 case 5:
