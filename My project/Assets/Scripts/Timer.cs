@@ -32,7 +32,8 @@ public class Timer : MonoBehaviour
                     toDestroy.Add(image.GetChild(currentCount -1).gameObject);
                     currentCount--;
                 }
-                toDestroy.Add(GameObject.Find("Canvas").transform.Find("Background").gameObject);
+                //toDestroy.Add(GameObject.Find("Canvas").transform.Find("Background").gameObject);
+                GameObject.Find("Canvas").transform.Find("Background").gameObject.SetActive(false);
                 DestroyList();
                 player.transform.position = new Vector3(0, 0, 0);
                 GameObject.Find("InteractionManager").GetComponent<InteractionManager>().ButtonTest();

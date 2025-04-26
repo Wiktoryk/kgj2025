@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject buttonPreFab;
     public GameObject chosenItems;
     public GameObject EndText;
+    public Sprite LoseSprite;
     public bool isWin;
     public bool isEnded;
     void Start()
@@ -34,27 +35,29 @@ public class GameController : MonoBehaviour
             if (isWin)
             {
                 EndText.SetActive(true);
+                EndText.transform.parent.GetChild(1).gameObject.SetActive(true);
+                foreach (Transform child in EndText.transform.parent.GetChild(1))
+                {
+                    child.gameObject.SetActive(false);
+                }
                 if (Input.anyKeyDown)
                 {
-                    if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
-                    {
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                    }
-                    else
-                    {
-                        SceneManager.LoadScene("Start");
-                    }
+                    SwitchAfterDelay();
                 }
 
             }
             else
             {
-                EndText.transform.GetChild(0).GetComponent<Text>().text = "You have lost";
+                EndText.transform.GetComponent<Image>().sprite = LoseSprite;
                 EndText.SetActive(true);
+                EndText.transform.parent.GetChild(1).gameObject.SetActive(true);
+                foreach (Transform child in EndText.transform.parent.GetChild(1))
+                {
+                    child.gameObject.SetActive(false);
+                }
                 if (Input.anyKeyDown)
                 {
-                    new WaitForSecondsRealtime(50);
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name) ;
+                    SwitchAfterDelay();
                 }
             }
             
@@ -104,5 +107,24 @@ public class GameController : MonoBehaviour
         return;
     }
 
+    IEnumerator<WaitForSeconds> SwitchAfterDelay()
+    {
+        yield return new WaitForSeconds(3);
+        if (isWin)
+        {
+            if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                SceneManager.LoadScene("Start");
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
 
