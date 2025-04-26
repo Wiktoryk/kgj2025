@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10.000021, y: 9.999998}
+  m_AnchoredPosition: {x: 10, y: 10}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2130415
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 256844598}
   - component: {fileID: 256844597}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Begin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'PREPARE AND REMEMBER:'
+  m_text: 'MEMORIZE THE SPELL:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
   m_sharedMaterial: {fileID: -9077296404695436053, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
