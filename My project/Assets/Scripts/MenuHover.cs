@@ -30,10 +30,10 @@ public class MenuHover : MonoBehaviour
             {
                 SceneManager.LoadScene("Level1");
             }
-        }else
-        {
-
-            Application.Quit();
+            else
+            {
+                Application.Quit();
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
