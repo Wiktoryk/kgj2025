@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public List<Sprite> ready;
     public List<Sprite> used;
     public List<Sprite> prox;
@@ -18,11 +17,5 @@ public class ResourceManager : MonoBehaviour
             prox.Add(Resources.Load<Sprite>("runestones/" + i + "/" + i + "-prox"));
         }
         Debug.Log(ready.Count);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

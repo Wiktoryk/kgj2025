@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class InteractionManager : MonoBehaviour
 {
-    private Transform player;
     private List<Transform> buttons = new List<Transform>();
-
-    public List<int> chosenIcons = new List<int>();
     public GameObject display;
+    private Transform player;
+    public List<int> chosenIcons = new List<int>();
+    
     void Start()
     {
         player = GameObject.Find("Player").transform;
