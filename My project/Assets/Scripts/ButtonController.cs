@@ -3,13 +3,13 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public bool hasInteracted = false;
-    public int icon;
+    public IconData iconData;
 
     public void Interaction()
     {
         if(!hasInteracted)
         {
-            switch (icon)
+            switch (iconData.icon)
             {   
                 case 0:
                     GameObject.Find("Player").GetComponent<PlayerController>().speed = 1000;

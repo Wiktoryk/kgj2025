@@ -1058,7 +1058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasInteracted: 0
-  icon: 0
 --- !u!212 &541675111
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1448,6 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 700
+  inverted: 0
 --- !u!212 &630263217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1617,9 +1617,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: 
-  generatedIcons: 
   display: {fileID: 543683030}
-  size: 5
+  size: 4
+  optSize: 1
 --- !u!114 &687359072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,7 +1632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713eedc835a2064fabaa9b5d9111cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons: 
   buttonPositions:
   - {x: -5, y: 3.5, z: 0}
   - {x: -6, y: -2, z: 0}
