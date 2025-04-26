@@ -7,6 +7,7 @@ public class StaticEnemy : MonoBehaviour
     public GameObject bulletPreFab;
     private Vector3 direction;
     public bool isActive = false;
+    
     void Start()
     {
         transform.position = new Vector3(-100,-100,0);

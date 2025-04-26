@@ -11,9 +11,9 @@ public class ShuffleIcons : MonoBehaviour
 
     public List<int> icons;
     public List<int> generatedIcons = new List<int>();
-    public int size;
     public GameObject display;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int size;
+    
     void Start()
     {
         for (int i = 0; i < size; i++)
@@ -39,11 +39,5 @@ public class ShuffleIcons : MonoBehaviour
             }
             icons.RemoveAt( i );
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

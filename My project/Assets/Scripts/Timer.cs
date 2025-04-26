@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    private List<GameObject> toDestroy = new List<GameObject>();
+    public GameObject czas;
     public float timeLeft;
     public float timeMax;
     private float hintTime = 5;
-    public GameObject czas;
-    private List<GameObject> toDestroy = new List<GameObject>();
+    
     void Start()
     {
         timeLeft = timeMax;
