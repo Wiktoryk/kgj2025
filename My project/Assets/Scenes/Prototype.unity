@@ -1211,12 +1211,12 @@ GameObject:
   - component: {fileID: 1035487212}
   - component: {fileID: 1035487211}
   m_Layer: 5
-  m_Name: Image
+  m_Name: WinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1035487210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1774,10 +1774,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 473503184}
   - {fileID: 1577134080}
   - {fileID: 1861557743}
   - {fileID: 1035487210}
-  - {fileID: 473503184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2214,7 +2214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.000061035, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1861557745
@@ -2426,6 +2426,7 @@ GameObject:
   - component: {fileID: 2057751074}
   - component: {fileID: 2057751073}
   - component: {fileID: 2057751077}
+  - component: {fileID: 2057751078}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2514,6 +2515,18 @@ MonoBehaviour:
   timeLeft: 0
   timeMax: 60
   czas: {fileID: 1846553535}
+--- !u!114 &2057751078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057751072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f868b4febb98d4fa9356af02daed1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2132938543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2540,7 @@ GameObject:
   - component: {fileID: 2132938544}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

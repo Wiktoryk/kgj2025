@@ -60,8 +60,8 @@ public class GameController : MonoBehaviour
             Sprite sprite = Resources.Load<Sprite>("tree runes/" + (icon + 1));
             button.GetComponent<SpriteRenderer>().sprite = sprite;
             button.SetActive(true);
-            button.AddComponent<ButtonController>();
             button.GetComponent<ButtonController>().icon = icon;
+            button.tag = "Button";
         }
     }
 

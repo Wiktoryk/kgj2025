@@ -19,7 +19,10 @@ public class ButtonController : MonoBehaviour
         if(!hasInteracted)
         {
             switch (icon)
-            {
+            {   
+                case 0:
+                    GameObject.Find("GameController").GetComponent<ChangeIconsLocation>().ChangeLocation();
+                    break;
                 case 1:
                     GameObject.Find("GameController").GetComponent<WallControl>().isActive = true;
                     break;
