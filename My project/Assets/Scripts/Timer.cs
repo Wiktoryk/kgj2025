@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class Timer : MonoBehaviour
                 GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
             }
         }
-        czas.GetComponent<Text>().text = ((int)timeLeft).ToString() + "sekund";
+        czas.GetComponent<TextMeshProUGUI>().text = ((int)timeLeft).ToString() + "sekund";
     }
 
     void DestroyList()
