@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public Rigidbody2D rb;
     public Transform playerPositon;
     public float speed;
 
-    // Update is called once per frame
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        this.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize( playerPositon.position - this.transform.position);
-       
+        rb.linearVelocity = Vector3.Normalize( playerPositon.position - this.transform.position);
+        Quaternion targetDirection = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, -rb.linearVelocity));
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetDirection, Time.deltaTime * 5);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
