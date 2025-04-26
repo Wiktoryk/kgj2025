@@ -23,6 +23,7 @@ public class MenuHover : MonoBehaviour
     {
 
         transform.GetChild(1).gameObject.SetActive(false);
+        collision.transform.GetChild(0).gameObject.SetActive(true);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -35,5 +36,7 @@ public class MenuHover : MonoBehaviour
     {
 
         transform.GetChild(1).gameObject.SetActive(true);
+
+        collision.transform.GetChild(0).gameObject.SetActive(false);
     }
 }
