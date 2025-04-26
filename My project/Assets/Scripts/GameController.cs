@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         isWin = false; isEnded = false;
+        Cursor.visible = false;
     }
 
     void Update()

@@ -15,6 +15,6 @@ public class SceneController : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("Level1");
     }
 }
