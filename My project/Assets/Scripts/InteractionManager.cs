@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.UI;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class InteractionManager : MonoBehaviour
     private List<Transform> buttons = new List<Transform>();
 
     public List<int> chosenIcons = new List<int>();
+    public GameObject display;
     void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -25,6 +28,11 @@ public class InteractionManager : MonoBehaviour
                 if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
                 {
                     chosenIcons.Add(button.GetComponent<ButtonController>().icon);
+                    GameObject go = new GameObject("IconID:" + chosenIcons.Last());
+                    go.transform.parent = display.transform;
+                    go.AddComponent<Image>();
+                    Sprite sprite = Resources.Load<Sprite>("tree runes/" + (chosenIcons.Last() + 1));
+                    go.GetComponent<Image>().sprite = sprite;
                 }
             }
         }
