@@ -10,7 +10,7 @@ public class AddEnemy : MonoBehaviour
         GameObject enemyObject = Instantiate(enemyObjectPrefab, Vector3.zero, Quaternion.identity);
         enemyObject.AddComponent<EnemyMovement>();
         enemyObject.GetComponent<EnemyMovement>().playerPositon = GameObject.Find("Player").transform;
-        enemyObject.GetComponent<EnemyMovement>().speed = 1;
+        enemyObject.GetComponent<EnemyMovement>().speed = 1.5f;
         enemyObject.SetActive(true);
     }
 }
