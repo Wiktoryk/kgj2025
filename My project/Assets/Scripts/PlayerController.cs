@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     {
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
-        rb.linearVelocity = new Vector2 (moveHorizontal * speed, moveVertical * speed);
+        rb.linearVelocity = new Vector2 (moveHorizontal * Time.deltaTime * speed, moveVertical * Time.deltaTime * speed);
+        if(moveHorizontal!=0 || moveVertical != 0)
+        {
+            Quaternion targetDirection = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, rb.linearVelocity));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetDirection, Time.deltaTime * 5);
+        }
+       
     }
 }
