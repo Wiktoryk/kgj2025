@@ -105,8 +105,8 @@ TextureImporter:
         serializedVersion: 2
         x: 27
         y: 37
-        width: 950
-        height: 980
+        width: 997
+        height: 987
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      9-ready_0: -4756861158090497818
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
