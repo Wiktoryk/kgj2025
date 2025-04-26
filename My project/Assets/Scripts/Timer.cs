@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     public float timeLeft;
     public float timeMax;
     private float hintTime = 5;
+    public GameObject czas;
     private List<GameObject> toDestroy = new List<GameObject>();
     void Start()
     {
@@ -45,6 +47,7 @@ public class Timer : MonoBehaviour
                 timeLeft = 0;
             }
         }
+        czas.GetComponent<Text>().text = ((int)timeLeft).ToString() + "sekund";
     }
 
     void DestroyList()

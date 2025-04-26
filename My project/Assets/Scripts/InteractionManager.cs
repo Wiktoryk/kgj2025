@@ -15,11 +15,12 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
-        if (buttons.Count <= 0)
+        if (buttons.Count > 0)
         {
             Transform button = isOverButton(player);
             if (Input.GetButtonDown("Fire1") && button != null)
             {
+               
                 button.GetComponent<ButtonController>().Interaction();
                 if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
                 {
