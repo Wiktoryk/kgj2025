@@ -23,13 +23,14 @@ public class Timer : MonoBehaviour
             hintTime -= Time.deltaTime;
             if (hintTime <= 0)
             {
-                Transform image = GameObject.Find("Canvas").transform.GetChild(0);
+                Transform image = GameObject.Find("Canvas").transform.Find("Image");
                 int currentCount = image.childCount;
                 while (currentCount > 0)
                 {
                     toDestroy.Add(image.GetChild(currentCount -1).gameObject);
                     currentCount--;
                 }
+                toDestroy.Add(GameObject.Find("Canvas").transform.Find("Background").gameObject);
                 DestroyList();
                 player.transform.position = new Vector3(0, 0, 0);
                 GameObject.Find("InteractionManager").GetComponent<InteractionManager>().ButtonTest();

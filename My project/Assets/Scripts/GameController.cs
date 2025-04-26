@@ -57,18 +57,6 @@ public class GameController : MonoBehaviour
         {
             int icon = iconData.icon;
             GameObject button = Instantiate(buttonPreFab, buttonPositions[counter++], Quaternion.identity);
-            //if (icon % 3 == 0)
-            //{
-            //    button.GetComponent<SpriteRenderer>().color = new Color((float)icon / 10, 0, 0);
-            //}
-            //else if (icon % 3 == 1)
-            //{
-            //    button.GetComponent<SpriteRenderer>().color = new Color(0, (float)icon / 10, 0);
-            //}
-            //else if (icon % 3 == 2)
-            //{
-            //    button.GetComponent<SpriteRenderer>().color = new Color(0, 0, (float)icon / 10);
-            //}
             Sprite sprite = Resources.Load<Sprite>("tree runes/" + (icon + 1));
             button.GetComponent<SpriteRenderer>().sprite = sprite;
             button.SetActive(true);
