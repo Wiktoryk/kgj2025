@@ -296,8 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ecc018d3871604eb4ce063579b318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenIcons: 
   display: {fileID: 323228033}
+  chosenIcons: 
 --- !u!4 &401675682
 Transform:
   m_ObjectHideFlags: 0
@@ -849,7 +849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb270e97d1eaa7a478c31f0a846771c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingWalls: {fileID: 0}
   hasInteracted: 0
   icon: 0
 --- !u!212 &951122762
@@ -1498,6 +1497,7 @@ GameObject:
   - component: {fileID: 1124625114}
   - component: {fileID: 1124625113}
   - component: {fileID: 1124625112}
+  - component: {fileID: 1124625116}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1651,6 +1651,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1124625116
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124625110}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e3406127e1915f4e986576fbd5fdce5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1178402673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,9 +2416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f0649164f989e4c8577743843c18fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  czas: {fileID: 1178402673}
   timeLeft: 0
   timeMax: 10
-  czas: {fileID: 1178402673}
 --- !u!114 &2066779731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,8 +2446,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: 
-  size: 2
+  generatedIcons: 
   display: {fileID: 537295098}
+  size: 2
 --- !u!114 &2066779733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2438,6 +2461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713eedc835a2064fabaa9b5d9111cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icons: 
   buttonPositions:
   - {x: 3, y: -2, z: 0}
   - {x: -3, y: -2, z: 0}

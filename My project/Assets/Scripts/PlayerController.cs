@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
         {
             Quaternion targetDirection = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, rb.linearVelocity));
             transform.rotation = Quaternion.Slerp(transform.rotation, targetDirection, Time.deltaTime * 5);
+            GetComponent<Animator>().enabled = true;
+        }
+        if (rb.linearVelocity.magnitude == 0)
+        {
+            GetComponent<Animator>().enabled = false;
         }
        
     }
