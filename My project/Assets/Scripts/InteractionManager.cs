@@ -49,7 +49,11 @@ public class InteractionManager : MonoBehaviour
                 {
                     button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().prox[button.GetComponent<ButtonController>().icon];
                 }
-                return button;
+                else
+                {
+                    button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().used[button.GetComponent<ButtonController>().icon];
+                }
+                    return button;
             }
             if (!button.GetComponent<ButtonController>().hasInteracted)
             {
