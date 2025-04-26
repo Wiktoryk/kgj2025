@@ -54,7 +54,7 @@ public class Timer : MonoBehaviour
                 GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
             }
         }
-        czas.GetComponent<TextMeshProUGUI>().text = ((int)timeLeft).ToString() + "sekund";
+        czas.GetComponent<TextMeshProUGUI>().text = ((int)timeLeft).ToString() + " seconds";
     }
 
     void DestroyList()
