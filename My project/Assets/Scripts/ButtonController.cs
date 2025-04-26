@@ -7,7 +7,10 @@ public class ButtonController : MonoBehaviour
     public int icon;
     void Start()
     {
-        movingWalls.SetActive(false);
+        if (movingWalls)
+        {
+            movingWalls.SetActive(false);
+        }
     }
 
     void Update()

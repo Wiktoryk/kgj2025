@@ -29,7 +29,14 @@ public class MenuHover : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            SceneManager.LoadScene("Level1");
+            if (this.gameObject.name == "Start")
+            {
+                SceneManager.LoadScene("Level1");
+            }
+        }else
+        {
+
+            Application.Quit();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
