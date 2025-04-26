@@ -80,3 +80,4 @@ crashlytics-build.properties
 /My project/Logs
 /My project/Logs
 *.log
+/My project/build
