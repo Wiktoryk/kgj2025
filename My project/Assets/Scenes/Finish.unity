@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Thank you for Playing
+  m_text: Thanks for the show.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
   m_sharedMaterial: {fileID: -9077296404695436053, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
@@ -2661,7 +2661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are true master of WILD RUNES
+  m_text: You are the true master of WILD RUNES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
   m_sharedMaterial: {fileID: -9077296404695436053, guid: eba400150d3fa1b4d84b68357294024d, type: 2}

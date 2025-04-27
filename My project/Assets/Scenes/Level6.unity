@@ -3190,7 +3190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep going
+  m_text: Keep going.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
   m_sharedMaterial: {fileID: -9077296404695436053, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
@@ -3326,7 +3326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Few runes are between you and RunMaster:'
+  m_text: 'You are getting close:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
   m_sharedMaterial: {fileID: -9077296404695436053, guid: eba400150d3fa1b4d84b68357294024d, type: 2}
