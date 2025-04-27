@@ -2687,7 +2687,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   bulletPreFab: {fileID: 999556792}
   emitterPreFab: {fileID: 1778162748718649381, guid: cd627033ef9e91c4d971365900ebe42c, type: 3}
-  delay: 2
+  delay: 1
   delayed: 0
   isActive: 1
 --- !u!212 &1331260548
