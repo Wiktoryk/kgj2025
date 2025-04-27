@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape))
         {
+            GameObject.Find("Music").GetComponent<AudioSource>().Stop();
             SceneManager.LoadScene("Start");
         }
     }
