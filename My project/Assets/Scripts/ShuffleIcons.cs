@@ -2,18 +2,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using System.Linq;
 
 public class ShuffleIcons : MonoBehaviour
 {
 
     public List<int> icons;
-    public List<int> generatedIcons = new List<int>();
+    public List<IconData> generatedIcons = new List<IconData>();
     public GameObject display;
     public int size;
-    
+    public int optSize=0;
+
     void Start()
     {
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size + optSize; i++)
         {
             icons.Add(i);
         }
@@ -21,18 +23,20 @@ public class ShuffleIcons : MonoBehaviour
         {
             int i = Random.Range( 0, icons.Count );
             GameObject go = new GameObject("IconID:"+ icons[i]);
-            generatedIcons.Add(icons[i]);
-            go.transform.parent = display.transform;
-            go.AddComponent<Image>();
-            Debug.Log(icons[i]);
-            if (GameObject.Find("GameController").GetComponent<ResourceManager>().ready.Count > 0)
+            generatedIcons.Add(new IconData(icons[i], icons.Count > optSize ? true : false));
+            if (generatedIcons.Last().used)
             {
-                go.GetComponent<Image>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[icons[i]];
-            }
-            else
-            {
-                Sprite sprite = Resources.Load<Sprite>("runestones/" + (icons[i]) + "/" + (icons[i]) + "-ready");
-                go.GetComponent<Image>().sprite = sprite;
+                go.transform.parent = display.transform;
+                go.AddComponent<Image>();
+                if (GameObject.Find("GameController").GetComponent<ResourceManager>().ready.Count > 0)
+                {
+                    go.GetComponent<Image>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[icons[i]];
+                }
+                else
+                {
+                    Sprite sprite = Resources.Load<Sprite>("runestones/" + (icons[i]) + "/" + (icons[i]) + "-ready");
+                    go.GetComponent<Image>().sprite = sprite;
+                }
             }
             icons.RemoveAt( i );
         }

@@ -4,11 +4,23 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
 
+public struct IconData
+{
+    public int icon;
+    public bool used;
+
+    public IconData(int icon, bool used)
+    {
+        this.icon = icon;
+        this.used = used;
+    }
+}
 
 public class GameController : MonoBehaviour
 {
-    public List<int> icons = new List<int>();
+    public List<IconData> icons = new List<IconData>();
     public List<Vector3> buttonPositions;
     public GameObject buttonPreFab;
     public GameObject chosenItems;
@@ -45,6 +57,10 @@ public class GameController : MonoBehaviour
             StartCoroutine(SwitchAfterDelay());
 
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Start");
+        }
     }
 
     public void generateButtons()
@@ -65,18 +81,17 @@ public class GameController : MonoBehaviour
         }
 
         int counter = 0;
-        foreach (int icon in icons)
+
+        foreach (IconData iconData in icons)
         {
             GameObject button = Instantiate(buttonPreFab, buttonPositions[counter++], Quaternion.identity);
-            button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[icon];
+            button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[iconData.icon];
             button.SetActive(true);
-            button.GetComponent<ButtonController>().icon = icon;
+            button.GetComponent<ButtonController>().iconData = iconData; ;
             button.tag = "Button";
         }
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Start");
-        }
+        icons = GetComponent<ShuffleIcons>().generatedIcons.Where(icon => icon.used == true).ToList();
+        
     }
 
     public void checkIcons()
@@ -84,7 +99,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < icons.Count; i++)
         {
 
-            if (chosenItems.GetComponent<InteractionManager>().chosenIcons[i] != icons[i])
+            if (chosenItems.GetComponent<InteractionManager>().chosenIcons[i] != icons[i].icon)
             {
                 isWin = false;
                 return;

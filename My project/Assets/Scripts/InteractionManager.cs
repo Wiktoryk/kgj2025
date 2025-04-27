@@ -34,10 +34,11 @@ public class InteractionManager : MonoBehaviour
             {
                
                 button.GetComponent<ButtonController>().Interaction();
-                Instantiate(Particle, button.transform);
-                if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
+                Instantiate(Particle, button.transform); 
+                ButtonController bc = button.GetComponent<ButtonController>();
+                if (bc.iconData.used && !chosenIcons.Contains(bc.iconData.icon))
                 {
-                    chosenIcons.Add(button.GetComponent<ButtonController>().icon);
+                    chosenIcons.Add(button.GetComponent<ButtonController>().iconData.icon);
                     GameObject go = new GameObject("IconID:" + chosenIcons.Last());
                     go.transform.parent = display.transform;
                     go.AddComponent<Image>();
@@ -57,23 +58,23 @@ public class InteractionManager : MonoBehaviour
                 
                 if (!button.GetComponent<ButtonController>().hasInteracted)
                 {
-                    button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().prox[button.GetComponent<ButtonController>().icon];
+                    button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().prox[button.GetComponent<ButtonController>().iconData.icon];
                 }
                 else
                 {
-                    button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().used[button.GetComponent<ButtonController>().icon];
+                    button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().used[button.GetComponent<ButtonController>().iconData.icon];
                 }
                     return button;
             }
             if (!button.GetComponent<ButtonController>().hasInteracted)
             {
 
-                button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[button.GetComponent<ButtonController>().icon];
+                button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().ready[button.GetComponent<ButtonController>().iconData.icon];
             }
             else
             {
 
-                button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().used[button.GetComponent<ButtonController>().icon];
+                button.GetComponent<SpriteRenderer>().sprite = GameObject.Find("GameController").GetComponent<ResourceManager>().used[button.GetComponent<ButtonController>().iconData.icon];
             }
         }
         return null;
