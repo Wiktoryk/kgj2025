@@ -32,35 +32,18 @@ public class GameController : MonoBehaviour
         }
         if (isEnded)
         {
-            if (isWin)
-            {
-                EndText.SetActive(true);
-                EndText.transform.parent.GetChild(1).gameObject.SetActive(true);
-                foreach (Transform child in EndText.transform.parent.GetChild(1))
-                {
-                    child.gameObject.SetActive(false);
-                }
-                if (Input.anyKeyDown)
-                {
-                    SwitchAfterDelay();
-                }
-
-            }
-            else
+            if (!isWin)
             {
                 EndText.transform.GetComponent<Image>().sprite = LoseSprite;
-                EndText.SetActive(true);
-                EndText.transform.parent.GetChild(1).gameObject.SetActive(true);
-                foreach (Transform child in EndText.transform.parent.GetChild(1))
-                {
-                    child.gameObject.SetActive(false);
-                }
-                if (Input.anyKeyDown)
-                {
-                    SwitchAfterDelay();
-                }
             }
-            
+            EndText.SetActive(true);
+            EndText.transform.parent.GetChild(1).gameObject.SetActive(true);
+            foreach (Transform child in EndText.transform.parent.GetChild(1))
+            {
+                child.gameObject.SetActive(false);
+            }
+            StartCoroutine(SwitchAfterDelay());
+
         }
     }
 
@@ -109,7 +92,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator<WaitForSeconds> SwitchAfterDelay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.0f);
         if (isWin)
         {
             if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
