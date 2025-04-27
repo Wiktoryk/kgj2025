@@ -3,6 +3,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public GameObject Particle;
+    public GameObject Shooter;
     public bool hasInteracted = false;
     public IconData iconData;
 
@@ -19,9 +20,10 @@ public class ButtonController : MonoBehaviour
                     GameObject.Find("GameController").GetComponent<WallControl>().isActive = true;
                     break;
                 case 2:
-                    GameObject staticEnemy = GameObject.Find("StaticEnemy");
+                    GameObject staticEnemy = Instantiate(Shooter, Vector3.zero, Quaternion.identity);
+                    staticEnemy.SetActive(true);
                     staticEnemy.GetComponent<StaticEnemy>().isActive = true;
-                    staticEnemy.transform.position = new Vector3(0, 0, 0);
+                    //staticEnemy.transform.position = Vector3.zero;
                     Instantiate(Particle, Vector3.zero, Quaternion.identity);
                     break;
                 case 3:

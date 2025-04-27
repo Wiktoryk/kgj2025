@@ -7,6 +7,7 @@ public class StaticEnemy : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject bulletPreFab;
+    public GameObject emitterPreFab;
     private Vector3 direction;
     public float delay;
     public bool delayed = false;
@@ -14,7 +15,7 @@ public class StaticEnemy : MonoBehaviour
     
     void Start()
     {
-        transform.position = new Vector3(-100,-100,0);
+
     }
 
     void Update()
@@ -39,6 +40,9 @@ public class StaticEnemy : MonoBehaviour
                 bullet = Instantiate(bulletPreFab, transform.position, Quaternion.identity);
                 direction = GameObject.Find("Player").transform.position - bullet.transform.position;
                 direction = direction.normalized;
+                bullet.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.zero, -direction));
+                GameObject particleEmitter = Instantiate(emitterPreFab, bullet.transform.position, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.zero, -direction)));
+                particleEmitter.transform.parent = bullet.transform;
                 delay = 1;
                 delayed = true;
             }
