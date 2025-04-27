@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     public GameObject buttonPreFab;
     public GameObject chosenItems;
     public GameObject EndText;
+    public GameObject ReasonText;
     public Sprite LoseSprite;
     public bool isWin;
     public bool isEnded;
@@ -103,6 +104,8 @@ public class GameController : MonoBehaviour
             if (chosenItems.GetComponent<InteractionManager>().chosenIcons[i] != icons[i].icon)
             {
                 isWin = false;
+                ReasonText.gameObject.SetActive(true);
+                ReasonText.GetComponent<TextMeshProUGUI>().text = "Wrong sequence of runes";
                 return;
             }
         }
