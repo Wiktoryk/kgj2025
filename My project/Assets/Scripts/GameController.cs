@@ -116,7 +116,13 @@ public class GameController : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                if (PlayerPrefs.GetInt("Level", 0) > SceneManager.GetActiveScene().buildIndex)
+                {
+                    PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex);
+                }
+                
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
             }
             else
             {
