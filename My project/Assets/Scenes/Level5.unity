@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   czas: {fileID: 79119455}
   timeLeft: 0
-  timeMax: 20
+  timeMax: 30
 --- !u!114 &1099226051
 MonoBehaviour:
   m_ObjectHideFlags: 0
