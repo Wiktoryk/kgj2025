@@ -30,7 +30,16 @@ public class MenuHover : MonoBehaviour
             {
                 SceneManager.LoadScene("Level1");
             }
-            else
+            else if (this.gameObject.name == "Choice")
+            {
+                SceneManager.LoadScene("ChoiceLevel");
+            }
+            else if(this.gameObject.name.Substring(0,5)=="Level")
+            {
+
+                SceneManager.LoadScene(this.gameObject.name);
+            }
+            else if (this.gameObject.name == "Exit")
             {
                 Application.Quit();
             }
