@@ -1150,6 +1150,7 @@ MonoBehaviour:
   ready: []
   used: []
   prox: []
+  clip: {fileID: 8300000, guid: 5f42da5bdbe02164c8a205b4bf2569de, type: 3}
 --- !u!114 &687359068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3665,7 +3666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &2050225972
 CircleCollider2D:
   m_ObjectHideFlags: 0

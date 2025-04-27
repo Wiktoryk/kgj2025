@@ -2526,6 +2526,7 @@ MonoBehaviour:
   ready: []
   used: []
   prox: []
+  clip: {fileID: 8300000, guid: 5f42da5bdbe02164c8a205b4bf2569de, type: 3}
 --- !u!1 &1591902838
 GameObject:
   m_ObjectHideFlags: 0

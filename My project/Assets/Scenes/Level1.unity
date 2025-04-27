@@ -2620,7 +2620,7 @@ MonoBehaviour:
   ready: []
   used: []
   prox: []
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 5f42da5bdbe02164c8a205b4bf2569de, type: 3}
 --- !u!82 &2066779736
 AudioSource:
   m_ObjectHideFlags: 0

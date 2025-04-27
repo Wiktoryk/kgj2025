@@ -1886,6 +1886,7 @@ MonoBehaviour:
   ready: []
   used: []
   prox: []
+  clip: {fileID: 8300000, guid: 5f42da5bdbe02164c8a205b4bf2569de, type: 3}
 --- !u!114 &935937103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,7 +2537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1331260546
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2587,10 +2588,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   bulletPreFab: {fileID: 999556792}
-  emitterPreFab: {fileID: 0}
-  delay: 0
+  emitterPreFab: {fileID: 1778162748718649381, guid: cd627033ef9e91c4d971365900ebe42c, type: 3}
+  delay: 2
   delayed: 0
-  isActive: 0
+  isActive: 1
 --- !u!212 &1331260548
 SpriteRenderer:
   m_ObjectHideFlags: 0
