@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class StaticEnemy : MonoBehaviour
 {
@@ -15,6 +17,14 @@ public class StaticEnemy : MonoBehaviour
 
     void Update()
     {
+        StartCoroutine(SwitchAfterDelay());
+        
+    }
+
+    IEnumerator<WaitForSecondsRealtime> SwitchAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(3.0f);
+        Debug.Log("strzela");
         if (isActive)
         {
             if (bullet == null)
