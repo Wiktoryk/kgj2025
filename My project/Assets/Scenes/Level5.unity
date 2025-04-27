@@ -3436,6 +3436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb270e97d1eaa7a478c31f0a846771c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Particle: {fileID: 1778162748718649381, guid: cda81219e14a3f249892c92d2924b6a7, type: 3}
   hasInteracted: 0
   icon: 0
 --- !u!212 &1683310960
