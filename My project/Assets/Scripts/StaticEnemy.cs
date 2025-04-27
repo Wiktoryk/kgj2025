@@ -8,6 +8,8 @@ public class StaticEnemy : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletPreFab;
     private Vector3 direction;
+    public float delay;
+    public bool delayed = false;
     public bool isActive = false;
     
     void Start()
@@ -17,24 +19,32 @@ public class StaticEnemy : MonoBehaviour
 
     void Update()
     {
-        StartCoroutine(SwitchAfterDelay());
-        
-    }
-
-    IEnumerator<WaitForSecondsRealtime> SwitchAfterDelay()
-    {
-        yield return new WaitForSecondsRealtime(3.0f);
-        Debug.Log("strzela");
         if (isActive)
         {
-            if (bullet == null)
+            if (delay > 0 && !delayed)
             {
-                bullet = Instantiate(bulletPreFab, transform.position, Quaternion.identity);
-                direction = GameObject.Find("Player").transform.position - bullet.transform.position;
+                delay -= Time.deltaTime;
+                return;
             }
             else
             {
-                bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(Math.Sign(direction.x), Math.Sign(direction.y), Math.Sign(direction.z)) * 400 * Time.deltaTime;
+                delay -= Time.deltaTime;
+                if (delay < 0)
+                {
+                    delayed = false;
+                }
+            }
+            if (bullet == null && !delayed)
+            {
+                bullet = Instantiate(bulletPreFab, transform.position, Quaternion.identity);
+                direction = GameObject.Find("Player").transform.position - bullet.transform.position;
+                direction = direction.normalized;
+                delay = 1;
+                delayed = true;
+            }
+            else if (bullet)
+            {
+                bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 400 * Time.deltaTime;
             }
         }
     }
