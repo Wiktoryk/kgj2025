@@ -30,6 +30,10 @@ public class MenuHover : MonoBehaviour
             {
                 SceneManager.LoadScene("Level1");
             }
+            else if (this.gameObject.name == "Exit1")
+            {
+                Application.Quit();
+            }
             else if (this.gameObject.name == "Choice")
             {
                 SceneManager.LoadScene("ChoiceLevel");
@@ -39,10 +43,7 @@ public class MenuHover : MonoBehaviour
 
                 SceneManager.LoadScene(this.gameObject.name);
             }
-            else if (this.gameObject.name == "Exit")
-            {
-                Application.Quit();
-            }
+            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
