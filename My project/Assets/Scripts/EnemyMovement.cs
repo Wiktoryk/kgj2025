@@ -21,7 +21,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Dzia³a kolizja");
         if (collision.gameObject.name == "Player")
         {
             GameObject.Find("GameController").GetComponent<GameController>().isEnded = true;
