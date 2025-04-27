@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      levelselect-button-prox_0: 5802329185917775371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
