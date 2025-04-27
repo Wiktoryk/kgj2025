@@ -11,6 +11,7 @@ public class ButtonController : MonoBehaviour
     {
         if(!hasInteracted)
         {
+            GameObject.Find("GameController").GetComponent<AudioSource>().Play();
             switch (iconData.icon)
             {   
                 case 0:
