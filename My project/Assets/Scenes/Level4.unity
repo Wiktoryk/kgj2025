@@ -571,6 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particle: {fileID: 1778162748718649381, guid: cda81219e14a3f249892c92d2924b6a7, type: 3}
+  Shooter: {fileID: 0}
   hasInteracted: 0
 --- !u!212 &541675111
 SpriteRenderer:
@@ -1104,7 +1105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   czas: {fileID: 567145173}
   timeLeft: 0
-  timeMax: 40
+  timeMax: 32
 --- !u!114 &687359070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3715,6 +3716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   bulletPreFab: {fileID: 163946678}
+  emitterPreFab: {fileID: 0}
   delay: 0
   delayed: 0
   isActive: 0
