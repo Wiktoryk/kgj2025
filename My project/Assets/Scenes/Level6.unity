@@ -2513,7 +2513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1258465601
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2564,8 +2564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   bulletPreFab: {fileID: 1826239311}
-  emitterPreFab: {fileID: 0}
-  delay: 0
+  emitterPreFab: {fileID: 1778162748718649381, guid: cd627033ef9e91c4d971365900ebe42c, type: 3}
+  delay: 2
   delayed: 0
   isActive: 0
 --- !u!212 &1258465603

@@ -1637,6 +1637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particle: {fileID: 1778162748718649381, guid: cda81219e14a3f249892c92d2924b6a7, type: 3}
+  Shooter: {fileID: 1123508522}
   hasInteracted: 0
 --- !u!212 &824449643
 SpriteRenderer:
@@ -2320,7 +2321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   bulletPreFab: {fileID: 2051249223}
-  delay: 0
+  emitterPreFab: {fileID: 1778162748718649381, guid: cd627033ef9e91c4d971365900ebe42c, type: 3}
+  delay: 2
   delayed: 0
   isActive: 0
 --- !u!212 &1123508525
@@ -3343,7 +3345,6 @@ SceneRoots:
   - {fileID: 824449644}
   - {fileID: 1210305660}
   - {fileID: 261158648}
-  - {fileID: 2051249228}
   - {fileID: 1123508526}
   - {fileID: 176795567}
   - {fileID: 411452054}
@@ -3354,3 +3355,4 @@ SceneRoots:
   - {fileID: 1983462561}
   - {fileID: 710314595}
   - {fileID: 818212819}
+  - {fileID: 2051249228}
