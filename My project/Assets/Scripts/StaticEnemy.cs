@@ -19,14 +19,6 @@ public class StaticEnemy : MonoBehaviour
 
     void Update()
     {
-        StartCoroutine(SwitchAfterDelay());
-        
-    }
-
-    IEnumerator<WaitForSecondsRealtime> SwitchAfterDelay()
-    {
-        yield return new WaitForSecondsRealtime(3.0f);
-        Debug.Log("strzela");
         if (isActive)
         {
             if (delay > 0 && !delayed)
