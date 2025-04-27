@@ -73,6 +73,10 @@ public class GameController : MonoBehaviour
             button.GetComponent<ButtonController>().icon = icon;
             button.tag = "Button";
         }
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Start");
+        }
     }
 
     public void checkIcons()

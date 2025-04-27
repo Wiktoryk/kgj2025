@@ -22,6 +22,14 @@ public class InteractionManager : MonoBehaviour
         if (buttons.Count > 0)
         {
             Transform button = isOverButton(player);
+            if (button != null && !button.GetComponent<ButtonController>().hasInteracted) 
+            {
+                player.GetChild(0).gameObject.SetActive(true); 
+            }
+            else 
+            { 
+                player.GetChild(0).gameObject.SetActive(false);
+            }
             if (Input.GetButtonDown("Fire1") && button != null)
             {
                
