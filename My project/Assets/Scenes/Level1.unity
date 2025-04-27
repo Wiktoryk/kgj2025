@@ -1202,7 +1202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Particle: {fileID: 1778162748718649381, guid: cda81219e14a3f249892c92d2924b6a7, type: 3}
   hasInteracted: 0
-  icon: 0
 --- !u!212 &951122762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2565,9 +2564,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons: 
-  generatedIcons: 
   display: {fileID: 537295098}
   size: 2
+  optSize: 0
 --- !u!114 &2066779733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2580,7 +2579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7713eedc835a2064fabaa9b5d9111cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons: 
   buttonPositions:
   - {x: 3, y: -2, z: 0}
   - {x: -3, y: -2, z: 0}
