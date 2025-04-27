@@ -2412,9 +2412,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPositions:
-  - {x: 7, y: 3.5, z: 0}
-  - {x: 3, y: 3.5, z: 0}
-  - {x: -3, y: -3, z: 0}
+  - {x: 2, y: 6, z: 0}
+  - {x: 7, y: 1, z: 0}
+  - {x: -3.5, y: -3.5, z: 0}
   buttonPreFab: {fileID: 824449641}
   chosenItems: {fileID: 1643805566}
   EndText: {fileID: 1604890025}
