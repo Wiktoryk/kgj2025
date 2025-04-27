@@ -1817,8 +1817,8 @@ MonoBehaviour:
   - {x: -2, y: 0, z: 0}
   buttonPreFab: {fileID: 1683310958}
   chosenItems: {fileID: 1883815706}
-  EndText: {fileID: 0}
-  LoseSprite: {fileID: 0}
+  EndText: {fileID: 1885937627}
+  LoseSprite: {fileID: 21300000, guid: dffdcc2c296cce54c81d91e206fc9eab, type: 3}
   isWin: 0
   isEnded: 0
 --- !u!4 &1099226054
@@ -3447,6 +3447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb270e97d1eaa7a478c31f0a846771c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Particle: {fileID: 1778162748718649381, guid: cda81219e14a3f249892c92d2924b6a7, type: 3}
   hasInteracted: 0
   icon: 0
 --- !u!212 &1683310960
