@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particle: {fileID: 1778162748718649381, guid: cda81219e14a3f249892c92d2924b6a7, type: 3}
-  Shooter: {fileID: 0}
+  Shooter: {fileID: 2050225971}
   hasInteracted: 0
 --- !u!212 &541675111
 SpriteRenderer:
