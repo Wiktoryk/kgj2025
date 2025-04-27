@@ -40,15 +40,17 @@ public class StaticEnemy : MonoBehaviour
                 bullet = Instantiate(bulletPreFab, transform.position, Quaternion.identity);
                 direction = GameObject.Find("Player").transform.position - bullet.transform.position;
                 direction = direction.normalized;
-                bullet.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.zero, -direction));
-                GameObject particleEmitter = Instantiate(emitterPreFab, bullet.transform.position, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.zero, -direction)));
+                GameObject particleEmitter = Instantiate(emitterPreFab, bullet.transform.position, Quaternion.identity);
                 particleEmitter.transform.parent = bullet.transform;
                 delay = 1;
                 delayed = true;
             }
             else if (bullet)
             {
-                bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 400 * Time.deltaTime;
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.linearVelocity = direction * 400 * Time.deltaTime;
+                bullet.transform.rotation = Quaternion.RotateTowards(bullet.transform.rotation, Quaternion.Euler(0, 0, 90 + Vector2.SignedAngle(Vector2.down, rb.linearVelocity)), rb.linearVelocity.magnitude);
+                bullet.transform.GetChild(0).rotation = Quaternion.RotateTowards(bullet.transform.rotation, Quaternion.Euler(0, 0, -Vector2.SignedAngle(Vector2.down, rb.linearVelocity)), rb.linearVelocity.magnitude);
             }
         }
     }
