@@ -7,6 +7,7 @@ public class InteractionManager : MonoBehaviour
 {
     private List<Transform> buttons = new List<Transform>();
     public GameObject display;
+    public GameObject Particle;
     private Transform player;
     public List<int> chosenIcons = new List<int>();
     
@@ -25,6 +26,7 @@ public class InteractionManager : MonoBehaviour
             {
                
                 button.GetComponent<ButtonController>().Interaction();
+                Instantiate(Particle, button.transform);
                 if (!chosenIcons.Contains(button.GetComponent<ButtonController>().icon))
                 {
                     chosenIcons.Add(button.GetComponent<ButtonController>().icon);

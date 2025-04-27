@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public GameObject Particle;
     public bool hasInteracted = false;
     public int icon;
 
@@ -21,9 +22,11 @@ public class ButtonController : MonoBehaviour
                     GameObject staticEnemy = GameObject.Find("StaticEnemy");
                     staticEnemy.GetComponent<StaticEnemy>().isActive = true;
                     staticEnemy.transform.position = new Vector3(0, 0, 0);
+                    Instantiate(Particle, Vector3.zero, Quaternion.identity);
                     break;
                 case 3:
                     GameObject.Find("GameController").GetComponent<AddEnemy>().Spawn();
+                    Instantiate(Particle, Vector3.zero, Quaternion.identity);
                     break;
                 case 4:
                     for (int i = 0;i< GameObject.Find("MovingWalls").transform.childCount; i++)
