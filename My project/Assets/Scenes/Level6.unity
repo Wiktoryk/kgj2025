@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   czas: {fileID: 1007115099}
   timeLeft: 0
-  timeMax: 35
+  timeMax: 30
 --- !u!114 &840035012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a8e45c7ce422543b410d44ba28ffce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 600
   inverted: 0
 --- !u!212 &1162820218
 SpriteRenderer:
@@ -2664,7 +2664,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   bulletPreFab: {fileID: 1826239311}
   emitterPreFab: {fileID: 1778162748718649381, guid: cd627033ef9e91c4d971365900ebe42c, type: 3}
-  delay: 2
+  delay: 1
   delayed: 0
   isActive: 0
 --- !u!212 &1258465603
